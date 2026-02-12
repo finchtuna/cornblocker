@@ -3,15 +3,19 @@
 ## Session 1 — 2026-02-11
 
 ### Completed
-- **Task 1: Manifest + domain blocklist + basic blocked page**
-  - `manifest.json` — Manifest V3 with `declarativeNetRequest` + `storage` permissions, service worker, icon refs
-  - `rules.json` — 5 test domains (pornhub.com, xvideos.com, xnxx.com, redtube.com, xhamster.com) redirect `main_frame` to `blocked.html`
-  - `blocked.html` — Minimal blocked page: dark theme, corn emoji, gold gradient title, "This site has been husked" subtitle
-  - `background.js` — Service worker stub with `onInstalled` listener
-  - `icons/` — Placeholder gold PNGs (16, 48, 128) so manifest loads without errors
+- **Task 1:** Manifest V3 + 5-domain blocklist + basic blocked.html
+- **Task 2:** Full blocked page UI — 50 messages, floating corn bg, fade transitions, category tags
+- **Task 3:** Urge timer bar — rises to 80% over 5s, declines over 35s
+- **Task 4:** Stats system — daily + all-time counters in chrome.storage.local
+- **Task 5:** Popup with ON/OFF toggle + stats display
+- **Task 6:** Full 79-rule domain blocklist across 8 categories
+- **Task 7:** Reddit NSFW detection content script (API + DOM)
+- **Task 8:** Twitter/X sensitive content filter
+- **Task 9:** Icon generation with PIL/Pillow (corn + prohibition overlay)
+- **Task 10:** Chrome Web Store prep — store listing, privacy policy, zip package
 
-### Issues Encountered
-- None
+### Architecture Decision
+- Used `webNavigation.onBeforeNavigate` for redirects instead of `declarativeNetRequest` redirect action, which had issues loading extension pages from external navigations (ERR_BLOCKED_BY_CLIENT). `declarativeNetRequest` kept as `block` type safety net.
 
-### Next Session Should
-- Start Task 2: Full blocked page UI (50 messages, floating corn emojis, message rotation)
+### All 10 Tasks Complete
+Extension is ready for Chrome Web Store submission pending screenshots.
