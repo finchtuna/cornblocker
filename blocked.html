@@ -4,54 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CornBlocked</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #0f0f1a;
-      color: #f0f0f0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-    }
-
-    .container {
-      max-width: 480px;
-      padding: 2rem;
-    }
-
-    .corn {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      background: linear-gradient(135deg, #f5c542, #e8a020);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      font-size: 1.1rem;
-      color: #a0a0b0;
-    }
-  </style>
+  <link rel="stylesheet" href="blocked.css">
 </head>
 <body>
+  <div class="corn-bg" id="cornBg"></div>
+
   <div class="container">
-    <div class="corn">&#127805;</div>
+    <div class="corn-pulse">&#127805;</div>
     <h1>CornBlocked</h1>
     <p class="subtitle">This site has been husked.</p>
+
+    <span class="category-tag" id="categoryTag"></span>
+
+    <div class="message-card">
+      <p class="message" id="message"></p>
+    </div>
+
+    <div class="buttons">
+      <button class="btn btn-secondary" id="newMessageBtn">New message</button>
+      <a class="btn btn-primary" href="https://www.google.com">Do something else</a>
+    </div>
+
+    <footer class="footer">
+      CornBlocker &mdash; your prefrontal cortex, finally getting a word in.
+    </footer>
   </div>
+
+  <script src="blocked.js"></script>
 </body>
 </html>
