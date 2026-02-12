@@ -154,8 +154,33 @@ function startUrgeTimer() {
   requestAnimationFrame(update);
 }
 
+// Stats — increment on every blocked page load
+async function incrementStats() {
+  const today = new Date().toDateString();
+  const result = await chrome.storage.local.get('cornblocker_stats');
+  const stats = result.cornblocker_stats || { date: today, count: 0, total: 0 };
+
+  // Reset daily count if it's a new day
+  if (stats.date !== today) {
+    stats.date = today;
+    stats.count = 0;
+  }
+
+  stats.count++;
+  stats.total++;
+
+  await chrome.storage.local.set({ cornblocker_stats: stats });
+  updateStatsDisplay(stats);
+}
+
+function updateStatsDisplay(stats) {
+  document.getElementById('statToday').textContent = stats.count;
+  document.getElementById('statTotal').textContent = stats.total;
+}
+
 // Init
 showMessage(false);
 createFloatingCorn();
 startUrgeTimer();
+incrementStats();
 newMessageBtn.addEventListener('click', () => showMessage(true));
