@@ -5,10 +5,14 @@
   const BLOCKED_PAGE = chrome.runtime.getURL('blocked.html');
   const NOTICE_CLASS = 'cornblocker-notice';
 
-  async function isEnabled() {
-    const result = await chrome.storage.local.get('enabled');
-    return result.enabled !== false;
-  }
+  // Cache enabled state
+  let enabled = true;
+  const enabledReady = chrome.storage.local.get('enabled').then((r) => {
+    enabled = r.enabled !== false;
+  });
+  chrome.storage.onChanged.addListener((changes) => {
+    if (changes.enabled) enabled = changes.enabled.newValue !== false;
+  });
 
   // Replace sensitive tweet content with inline notice
   function hideSensitiveTweet(tweet) {
@@ -52,16 +56,15 @@
 
   // Check for sensitive profile interstitial
   function checkProfileGate() {
-    // "This profile may include potentially sensitive content" interstitial
     const interstitials = document.querySelectorAll(
       '[data-testid="interstitial-container"], ' +
       '[data-testid="sensitiveMediaInterstitial"]'
     );
 
     for (const el of interstitials) {
-      const text = el.textContent.toLowerCase();
+      const text = (el.textContent || '').toLowerCase();
       if (text.includes('sensitive') || text.includes('adult')) {
-        window.location.href = BLOCKED_PAGE;
+        window.location.replace(BLOCKED_PAGE);
         return true;
       }
     }
@@ -75,34 +78,62 @@
   }
 
   async function check() {
-    if (!(await isEnabled())) return;
+    await enabledReady;
+    if (!enabled) return;
     if (checkProfileGate()) return;
     scanTweets();
   }
 
-  // MutationObserver for SPA tweet loading
-  const observer = new MutationObserver(() => {
-    check();
-  });
+  // Throttled + trailing checks avoid jank while guaranteeing periodic enforcement.
+  let trailingTimer;
+  let inFlight = false;
+  let pendingAfterRun = false;
+  let lastRun = 0;
+  const CHECK_INTERVAL_MS = 200;
 
-  // Start observing once body is available
-  function startObserving() {
-    if (document.body) {
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true
-      });
-      check();
-    } else {
-      document.addEventListener('DOMContentLoaded', () => {
-        observer.observe(document.body, {
-          childList: true,
-          subtree: true
-        });
-        check();
-      });
+  function runCheck() {
+    if (inFlight) {
+      pendingAfterRun = true;
+      return;
+    }
+    inFlight = true;
+    lastRun = Date.now();
+    Promise.resolve(check()).finally(() => {
+      inFlight = false;
+      if (pendingAfterRun) {
+        pendingAfterRun = false;
+        scheduleCheck();
+      }
+    });
+  }
+
+  function scheduleCheck() {
+    const sinceLastRun = Date.now() - lastRun;
+    if (sinceLastRun >= CHECK_INTERVAL_MS) {
+      runCheck();
+      return;
+    }
+
+    if (!trailingTimer) {
+      trailingTimer = setTimeout(() => {
+        trailingTimer = null;
+        runCheck();
+      }, CHECK_INTERVAL_MS - sinceLastRun);
     }
   }
 
-  startObserving();
+  const observer = new MutationObserver(() => {
+    scheduleCheck();
+  });
+
+  // Start observing once body is available
+  if (document.body) {
+    observer.observe(document.body, { childList: true, subtree: true });
+    scheduleCheck();
+  } else {
+    document.addEventListener('DOMContentLoaded', () => {
+      observer.observe(document.body, { childList: true, subtree: true });
+      scheduleCheck();
+    });
+  }
 })();
