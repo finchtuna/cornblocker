@@ -118,6 +118,48 @@ h1 {
   opacity: 0;
 }
 
+/* Urge timer */
+.urge-timer {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.urge-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.urge-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #a0a0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.urge-percent {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #f5c542;
+  font-variant-numeric: tabular-nums;
+}
+
+.urge-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.urge-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #e8a020, #f5c542);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
 /* Buttons */
 .buttons {
   display: flex;

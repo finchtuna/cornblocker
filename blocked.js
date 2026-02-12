@@ -116,7 +116,46 @@ function createFloatingCorn() {
   }
 }
 
+// Urge timer — rises quickly to ~80%, then slowly declines
+function startUrgeTimer() {
+  const bar = document.getElementById('urgeBar');
+  const percent = document.getElementById('urgePercent');
+  const startTime = Date.now();
+
+  // Phase 1: rise to 80% over 5 seconds (ease-out)
+  // Phase 2: decline from 80% to 0% over 35 seconds (ease-in)
+  const RISE_DURATION = 5000;
+  const PEAK = 80;
+  const DECLINE_DURATION = 35000;
+
+  function update() {
+    const elapsed = Date.now() - startTime;
+    let value;
+
+    if (elapsed < RISE_DURATION) {
+      // Rise phase — ease-out curve
+      const t = elapsed / RISE_DURATION;
+      value = PEAK * (1 - Math.pow(1 - t, 3));
+    } else {
+      // Decline phase — ease-in curve
+      const t = Math.min((elapsed - RISE_DURATION) / DECLINE_DURATION, 1);
+      value = PEAK * Math.pow(1 - t, 2);
+    }
+
+    value = Math.max(0, Math.round(value));
+    bar.style.width = value + '%';
+    percent.textContent = value + '%';
+
+    if (value > 0) {
+      requestAnimationFrame(update);
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
 // Init
 showMessage(false);
 createFloatingCorn();
+startUrgeTimer();
 newMessageBtn.addEventListener('click', () => showMessage(true));
