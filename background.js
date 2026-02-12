@@ -18,15 +18,34 @@ function isBlockedDomain(url) {
 }
 
 // Redirect to blocked.html before the navigation completes
-chrome.webNavigation.onBeforeNavigate.addListener((details) => {
+chrome.webNavigation.onBeforeNavigate.addListener(async (details) => {
   if (details.frameId !== 0) return;
-  if (isBlockedDomain(details.url)) {
-    chrome.tabs.update(details.tabId, {
-      url: chrome.runtime.getURL('blocked.html')
+  if (!isBlockedDomain(details.url)) return;
+
+  const result = await chrome.storage.local.get('enabled');
+  if (result.enabled === false) return;
+
+  chrome.tabs.update(details.tabId, {
+    url: chrome.runtime.getURL('blocked.html')
+  });
+});
+
+// Handle toggle from popup
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.type === 'toggle') {
+    // Enable or disable the declarativeNetRequest ruleset
+    chrome.declarativeNetRequest.updateEnabledRulesets({
+      enableRulesetIds: message.enabled ? ['blocked_domains'] : [],
+      disableRulesetIds: message.enabled ? [] : ['blocked_domains']
     });
   }
 });
 
-chrome.runtime.onInstalled.addListener(() => {
+// Set default enabled state on install
+chrome.runtime.onInstalled.addListener(async () => {
+  const result = await chrome.storage.local.get('enabled');
+  if (result.enabled === undefined) {
+    await chrome.storage.local.set({ enabled: true });
+  }
   console.log('CornBlocker installed');
 });

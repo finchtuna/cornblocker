@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <div class="header">
+      <span class="logo">&#127805;</span>
+      <h1>CornBlocker</h1>
+    </div>
+
+    <div class="status-row">
+      <div class="status-indicator">
+        <span class="status-dot" id="statusDot"></span>
+        <span class="status-text" id="statusText">Protection ON</span>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="toggleSwitch" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="stat-value" id="statToday">0</span>
+        <span class="stat-label">Today</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="statTotal">0</span>
+        <span class="stat-label">All time</span>
+      </div>
+    </div>
+
+    <footer class="footer">
+      Block the corn. Reclaim your brain.
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
