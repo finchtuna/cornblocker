@@ -9,11 +9,7 @@
     "storage"
   ],
   "host_permissions": [
-    "*://*.pornhub.com/*",
-    "*://*.xvideos.com/*",
-    "*://*.xnxx.com/*",
-    "*://*.redtube.com/*",
-    "*://*.xhamster.com/*"
+    "<all_urls>"
   ],
   "background": {
     "service_worker": "background.js"

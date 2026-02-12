@@ -1,47 +1,81 @@
 [
-  {
-    "id": 1,
-    "priority": 1,
-    "action": { "type": "block" },
-    "condition": {
-      "requestDomains": ["pornhub.com"],
-      "resourceTypes": ["main_frame"]
-    }
-  },
-  {
-    "id": 2,
-    "priority": 1,
-    "action": { "type": "block" },
-    "condition": {
-      "requestDomains": ["xvideos.com"],
-      "resourceTypes": ["main_frame"]
-    }
-  },
-  {
-    "id": 3,
-    "priority": 1,
-    "action": { "type": "block" },
-    "condition": {
-      "requestDomains": ["xnxx.com"],
-      "resourceTypes": ["main_frame"]
-    }
-  },
-  {
-    "id": 4,
-    "priority": 1,
-    "action": { "type": "block" },
-    "condition": {
-      "requestDomains": ["redtube.com"],
-      "resourceTypes": ["main_frame"]
-    }
-  },
-  {
-    "id": 5,
-    "priority": 1,
-    "action": { "type": "block" },
-    "condition": {
-      "requestDomains": ["xhamster.com"],
-      "resourceTypes": ["main_frame"]
-    }
-  }
+  {"id":1,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["pornhub.com"],"resourceTypes":["main_frame"]}},
+  {"id":2,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["xvideos.com"],"resourceTypes":["main_frame"]}},
+  {"id":3,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["xnxx.com"],"resourceTypes":["main_frame"]}},
+  {"id":4,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["xhamster.com"],"resourceTypes":["main_frame"]}},
+  {"id":5,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["redtube.com"],"resourceTypes":["main_frame"]}},
+  {"id":6,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["youporn.com"],"resourceTypes":["main_frame"]}},
+  {"id":7,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["tube8.com"],"resourceTypes":["main_frame"]}},
+  {"id":8,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["spankbang.com"],"resourceTypes":["main_frame"]}},
+  {"id":9,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["thumbzilla.com"],"resourceTypes":["main_frame"]}},
+  {"id":10,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["beeg.com"],"resourceTypes":["main_frame"]}},
+  {"id":11,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["fuq.com"],"resourceTypes":["main_frame"]}},
+  {"id":12,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["tnaflix.com"],"resourceTypes":["main_frame"]}},
+  {"id":13,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["drtuber.com"],"resourceTypes":["main_frame"]}},
+  {"id":14,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["ixxx.com"],"resourceTypes":["main_frame"]}},
+  {"id":15,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["hqporner.com"],"resourceTypes":["main_frame"]}},
+  {"id":16,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["eporner.com"],"resourceTypes":["main_frame"]}},
+  {"id":17,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["3movs.com"],"resourceTypes":["main_frame"]}},
+  {"id":18,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["porntrex.com"],"resourceTypes":["main_frame"]}},
+  {"id":19,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["playvids.com"],"resourceTypes":["main_frame"]}},
+  {"id":20,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["txxx.com"],"resourceTypes":["main_frame"]}},
+  {"id":21,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["hdzog.com"],"resourceTypes":["main_frame"]}},
+  {"id":22,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["vporn.com"],"resourceTypes":["main_frame"]}},
+  {"id":23,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["pornone.com"],"resourceTypes":["main_frame"]}},
+  {"id":24,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["porngo.com"],"resourceTypes":["main_frame"]}},
+  {"id":25,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["sexvid.xxx"],"resourceTypes":["main_frame"]}},
+  {"id":26,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["tubegalore.com"],"resourceTypes":["main_frame"]}},
+  {"id":27,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["pornzog.com"],"resourceTypes":["main_frame"]}},
+  {"id":28,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["4tube.com"],"resourceTypes":["main_frame"]}},
+  {"id":29,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["fapvid.com"],"resourceTypes":["main_frame"]}},
+  {"id":30,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["xxxbunker.com"],"resourceTypes":["main_frame"]}},
+  {"id":31,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["cliphunter.com"],"resourceTypes":["main_frame"]}},
+  {"id":32,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["fapster.xxx"],"resourceTypes":["main_frame"]}},
+  {"id":33,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["porndig.com"],"resourceTypes":["main_frame"]}},
+  {"id":34,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["brazzers.com"],"resourceTypes":["main_frame"]}},
+  {"id":35,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["bangbros.com"],"resourceTypes":["main_frame"]}},
+  {"id":36,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["naughtyamerica.com"],"resourceTypes":["main_frame"]}},
+  {"id":37,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["realitykings.com"],"resourceTypes":["main_frame"]}},
+  {"id":38,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["mofos.com"],"resourceTypes":["main_frame"]}},
+  {"id":39,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["digitalplayground.com"],"resourceTypes":["main_frame"]}},
+  {"id":40,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["chaturbate.com"],"resourceTypes":["main_frame"]}},
+  {"id":41,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["stripchat.com"],"resourceTypes":["main_frame"]}},
+  {"id":42,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["livejasmin.com"],"resourceTypes":["main_frame"]}},
+  {"id":43,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["cam4.com"],"resourceTypes":["main_frame"]}},
+  {"id":44,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["bongacams.com"],"resourceTypes":["main_frame"]}},
+  {"id":45,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["myfreecams.com"],"resourceTypes":["main_frame"]}},
+  {"id":46,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["camsoda.com"],"resourceTypes":["main_frame"]}},
+  {"id":47,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["flirt4free.com"],"resourceTypes":["main_frame"]}},
+  {"id":48,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["onlyfans.com"],"resourceTypes":["main_frame"]}},
+  {"id":49,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["fansly.com"],"resourceTypes":["main_frame"]}},
+  {"id":50,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["manyvids.com"],"resourceTypes":["main_frame"]}},
+  {"id":51,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["clips4sale.com"],"resourceTypes":["main_frame"]}},
+  {"id":52,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["iwantclips.com"],"resourceTypes":["main_frame"]}},
+  {"id":53,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["loyalfans.com"],"resourceTypes":["main_frame"]}},
+  {"id":54,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["erome.com"],"resourceTypes":["main_frame"]}},
+  {"id":55,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["motherless.com"],"resourceTypes":["main_frame"]}},
+  {"id":56,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["bellesa.co"],"resourceTypes":["main_frame"]}},
+  {"id":57,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["pornpics.com"],"resourceTypes":["main_frame"]}},
+  {"id":58,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["pornpics.de"],"resourceTypes":["main_frame"]}},
+  {"id":59,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["imagefap.com"],"resourceTypes":["main_frame"]}},
+  {"id":60,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["pornmd.com"],"resourceTypes":["main_frame"]}},
+  {"id":61,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["nudevista.com"],"resourceTypes":["main_frame"]}},
+  {"id":62,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["nhentai.net"],"resourceTypes":["main_frame"]}},
+  {"id":63,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["hentaihaven.xxx"],"resourceTypes":["main_frame"]}},
+  {"id":64,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["rule34.xxx"],"resourceTypes":["main_frame"]}},
+  {"id":65,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["rule34video.com"],"resourceTypes":["main_frame"]}},
+  {"id":66,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["hanime.tv"],"resourceTypes":["main_frame"]}},
+  {"id":67,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["gelbooru.com"],"resourceTypes":["main_frame"]}},
+  {"id":68,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["danbooru.donmai.us"],"resourceTypes":["main_frame"]}},
+  {"id":69,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["e621.net"],"resourceTypes":["main_frame"]}},
+  {"id":70,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["hitomi.la"],"resourceTypes":["main_frame"]}},
+  {"id":71,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["tsumino.com"],"resourceTypes":["main_frame"]}},
+  {"id":72,"priority":1,"action":{"type":"block"},"condition":{"requestDomains":["literotica.com"],"resourceTypes":["main_frame"]}},
+  {"id":73,"priority":1,"action":{"type":"block"},"condition":{"urlFilter":"||4chan.org/b/","resourceTypes":["main_frame"]}},
+  {"id":74,"priority":1,"action":{"type":"block"},"condition":{"urlFilter":"||4chan.org/gif/","resourceTypes":["main_frame"]}},
+  {"id":75,"priority":1,"action":{"type":"block"},"condition":{"urlFilter":"||4chan.org/s/","resourceTypes":["main_frame"]}},
+  {"id":76,"priority":1,"action":{"type":"block"},"condition":{"urlFilter":"||4chan.org/hc/","resourceTypes":["main_frame"]}},
+  {"id":77,"priority":1,"action":{"type":"block"},"condition":{"urlFilter":"||4chan.org/d/","resourceTypes":["main_frame"]}},
+  {"id":78,"priority":1,"action":{"type":"block"},"condition":{"urlFilter":"||4chan.org/h/","resourceTypes":["main_frame"]}},
+  {"id":79,"priority":1,"action":{"type":"block"},"condition":{"urlFilter":"||4chan.org/soc/","resourceTypes":["main_frame"]}}
 ]
