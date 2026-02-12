@@ -28,6 +28,11 @@
       "matches": ["*://*.reddit.com/*"],
       "js": ["content-reddit.js"],
       "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.x.com/*", "*://*.twitter.com/*"],
+      "js": ["content-twitter.js"],
+      "run_at": "document_idle"
     }
   ],
   "action": {
